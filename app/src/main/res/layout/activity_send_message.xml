@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.SendMessage"
-    android:background="@color/white">
+    android:background="?colorOnSecondary">
 
     <LinearLayout
         android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ارسال پیام"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondary"
             android:textSize="20dp" />
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:tint="@color/black" />
+        app:tint="?attr/colorSecondary" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -124,7 +124,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:text="ارسال پیام"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnSecondary"
         android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

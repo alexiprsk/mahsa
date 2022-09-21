@@ -29,7 +29,7 @@
             android:text="از/به 09xxxxxxxxx"
             android:textSize="18dp"
             android:layout_gravity="end"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondary"
             android:justificationMode="inter_word" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:justificationMode="inter_word"
             android:singleLine="true"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondary"
             android:text="68 65 79 20 69 74 73 20 6d 65 20 61 72 65 20 79 6f 75 20 6f 6b 3f 20 68 6f 77 20 61 72 65 20 6d 75 6c 6c 61 68 73 3f"
             android:textSize="16dp" />
 

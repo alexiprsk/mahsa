@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
-    android:background="@color/white">
+    android:background="?colorOnSecondary">
 
     <LinearLayout
         android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="مهسا 🖤"
             android:textSize="20dp"
-            android:textColor="@color/black"/>
+            android:textColor="?attr/colorSecondary"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,14 +54,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/lock"
-            app:tint="@color/black" />
+            app:tint="?attr/colorSecondary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="پیامی یافت نشد. برای شروع پیامی ارسال کنید."
-            android:textColor="@color/black" />
+            android:textColor="?attr/colorSecondary" />
 
     </LinearLayout>
 
