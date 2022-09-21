@@ -42,15 +42,11 @@ public class SmsReceiver extends BroadcastReceiver {
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             CHANNEL_ID = "mahsa_sms_channel";
-            CharSequence name = "mahsa_sms_channel";
-            String Description = "The SMS channel for mahsa chat";
+            CharSequence name = "mhs0x7afeaf04";
+            String Description = "Official SMS channel";
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
             mChannel.setDescription(Description);
-            mChannel.enableLights(true);
-            mChannel.setLightColor(Color.RED);
-            mChannel.enableVibration(true);
-            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             mChannel.setShowBadge(false);
             manager.createNotificationChannel(mChannel);
         }

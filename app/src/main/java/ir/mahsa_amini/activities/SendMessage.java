@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.scottyab.aescrypt.AESCrypt;
 
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.List;
 
 import ir.mahsa_amini.R;
 import ir.mahsa_amini.dialogs.RandomKeyDialog;
@@ -82,14 +85,20 @@ public class SendMessage extends AppCompatActivity {
                 if (PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
                     try {
                         String encrypted = AESCrypt.encrypt(password.getText().toString(), message.getText().toString());
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent,0);
                         SmsManager sms = SmsManager.getDefault();
-                        sms.sendTextMessage(phone, null, encrypted, pendingIntent,null);
+                        if (encrypted.length() > 160) {
+                            ArrayList<String> parts = sms.divideMessage(encrypted);
+                            sms.sendMultipartTextMessage(phoneText, null, parts,
+                                    null, null);
+                        }
+                        else {
+                            sms.sendTextMessage(phone, null, encrypted, null,null);
+                        }
                         db.newMessage(phone, message.getText().toString(), true, true);
                         Toast.makeText(this, "پیام ارسال شد.", Toast.LENGTH_SHORT).show();
-                        receiver.getText().clear();
-                        message.getText().clear();
+                        Intent redirect = new Intent(SendMessage.this, MainActivity.class);
+                        redirect.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(redirect);
                     } catch (GeneralSecurityException e){
                         Toast.makeText(this, "خطایی رخ داد.", Toast.LENGTH_SHORT).show();
                     }
@@ -102,6 +111,11 @@ public class SendMessage extends AppCompatActivity {
                 Toast.makeText(this, "شماره تلفن گیرنده و پیام را وارد کنید.", Toast.LENGTH_SHORT).show();
             }
         });
+
+        String extraMessage = getIntent().getStringExtra("message");
+        if (extraMessage != null && !extraMessage.equals("")) {
+            message.setText(extraMessage);
+        }
     }
 
     @Override

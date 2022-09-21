@@ -69,6 +69,12 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void deleteMessage(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(TABLE_NAME, ID_COL + "=?", new String[]{id});
+        db.close();
+    }
+
     public Message readMessage(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursorMessages = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COL + " = " + id, null);

@@ -67,8 +67,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(Message message) {
-        finish();
-        startActivity(getIntent());
+        if (message.getId() == -1) {
+            messageAdapter.notifyDataSetChanged();
+            if (messages.size() == 0){
+                noMessage.setVisibility(View.VISIBLE);
+            }
+            else {
+                noMessage.setVisibility(View.INVISIBLE);
+            }
+        }
+        else {
+            finish();
+            startActivity(getIntent());
+        }
     }
 
     @Override

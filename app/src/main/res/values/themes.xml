@@ -14,6 +14,7 @@
         <item name="android:statusBarColor">@color/white</item>
     </style>
     <style name="Theme.AppCompat.DayNight.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="fontFamily">@font/irsr</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="colorSecondary">@color/black</item>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="5dp"
@@ -10,11 +11,10 @@
     android:layout_marginBottom="10dp"
     app:cardElevation="3dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/message_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingBottom="10dp"
@@ -26,29 +26,51 @@
             android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="از/به 09xxxxxxxxx"
-            android:textSize="18dp"
             android:layout_gravity="end"
+            android:justificationMode="inter_word"
+            android:text="از/به 09xxxxxxxxx"
             android:textColor="?attr/colorSecondary"
-            android:justificationMode="inter_word" />
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
+            android:layout_marginTop="5dp"
             android:id="@+id/hex_message"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ellipsize="end"
-            android:layout_marginRight="5dp"
             android:fontFamily="@font/consola"
             android:gravity="center"
             android:justificationMode="inter_word"
             android:singleLine="true"
-            android:textStyle="bold"
-            android:textColor="?attr/colorSecondary"
             android:text="68 65 79 20 69 74 73 20 6d 65 20 61 72 65 20 79 6f 75 20 6f 6b 3f 20 68 6f 77 20 61 72 65 20 6d 75 6c 6c 61 68 73 3f"
-            android:textSize="16dp" />
+            android:textColor="?attr/colorSecondary"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/message_menu" />
+
+        <ImageView
+            android:src="@drawable/more_24"
+            android:id="@+id/message_menu"
+            android:layout_width="40dp"
+            app:tint="?attr/colorSecondary"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/phone"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

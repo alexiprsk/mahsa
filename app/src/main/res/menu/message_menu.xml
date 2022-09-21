@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/delete_message"
+        android:title="حذف پیام"/>
+    <item android:id="@+id/share_message"
+        android:title="باز ارسال"/>
+    <item android:id="@+id/encrypt_message"
+        android:title="رمزنگاری"/>
+    <item android:id="@+id/decrypt_message"
+        android:title="رمزگشایی"/>
+
+</menu>
