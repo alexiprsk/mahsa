@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="تو نمی میری، نام تو رمز خواهد شد..."
+            android:text="نام تو رمز خواهد شد..."
             android:textSize="16dp"
             android:textColor="@color/description"/>
 
