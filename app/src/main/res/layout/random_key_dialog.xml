@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="برای امنیت بیشتر، می توانید از کلمه عبور های تصادفی استفاده کنید."
-            android:textColor="?attr/colorOnSecondary"
+            android:textColor="?attr/colorSecondary"
             android:justificationMode="inter_word" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,7 +50,7 @@
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
                 android:src="@drawable/copy_24"
-                app:tint="?attr/colorOnSecondary"
+                app:tint="?attr/colorSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
