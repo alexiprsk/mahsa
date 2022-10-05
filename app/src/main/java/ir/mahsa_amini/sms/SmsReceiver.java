@@ -93,6 +93,7 @@ public class SmsReceiver extends BroadcastReceiver {
                         db.newMessage(sender, message, false, false);
                         EventBus.getDefault().post(new Message(-1, sender, message, false, false));
                         sendNotification(context, "یک پیام رمزشده جدید برای شما ارسال شده است.", "پیام جدید", new Random().nextInt(1024));
+                        abortBroadcast();
                     } catch (RuntimeException ex) {
 
                     }
